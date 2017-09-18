@@ -1,6 +1,6 @@
 <template>
   <div class="container" style="margin-top: 36px">
-
+    <h1 class="login">Login</h1>
     <form>
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
@@ -11,7 +11,7 @@
         <label for="exampleInputPassword1">Password</label>
         <input v-model="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
       </div>
-      <button v-on:click="register" type="submit" class="btn btn-primary">Submit</button>
+      <button v-on:click="login" type="submit" class="btn btn-primary">Submit</button>
     </form>
     <div v-html="error" />
   </div>
@@ -30,9 +30,9 @@ export default {
     };
   },
   methods: {
-    async register() {
+    async login() {
       try {
-        await AuthenticationService.register({
+        await AuthenticationService.login({
           email: this.email,
           password: this.password,
         });
@@ -45,10 +45,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-.layout {
-  border: 1px solid #d7dde4;
-  background: #f5f7f9;
-  height: 100vh;
+<style scoped>
+.login {
+  margin-bottom: 36px;
 }
 </style>
