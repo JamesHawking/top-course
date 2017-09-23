@@ -1,18 +1,20 @@
 <template>
   <div class="container" style="margin-top: 36px">
+    <div class="col-6 centered">
     <h1 class="login">Login</h1>
     <form>
       <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input v-model="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <label class="form-label" for="exampleInputEmail1">Email address</label>
+        <input class="form-input input-lg" v-model="email" type="email" aria-describedby="emailHelp" placeholder="Enter email">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input v-model="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <label class="form-label" for="exampleInputPassword1">Password</label>
+        <input class="form-input input-lg" v-model="password" type="password" placeholder="Password">
       </div>
       <button v-on:click="login" type="submit" class="btn btn-primary">Submit</button>
     </form>
+    </div>
     <div v-html="error" />
   </div>
 </template>
@@ -45,8 +47,5 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.login {
-  margin-bottom: 36px;
-}
+<style>
 </style>

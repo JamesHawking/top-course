@@ -13,7 +13,11 @@ module.exports = {
   async register(req, res) {
     try {
       const user = await User.create(req.body);
-      res.send(user.toJSON());
+      const userJSON = user.toJSON();
+      res.send({
+        user: userJSON,
+        token: jwtSignUser(userJSON),
+      });
     } catch (err) {
       res.status(400).send({
         error: 'This email is in use',
@@ -34,9 +38,8 @@ module.exports = {
           error: 'Info was incorrect',
         });
       }
-      
+
       const isPasswordValid = await user.comparePasswords(password);
-      console.log(isPasswordValid);
       if (!isPasswordValid) {
         return res.status(403).send({
           error: 'Info was incorrect',

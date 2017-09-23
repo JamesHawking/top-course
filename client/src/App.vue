@@ -1,33 +1,18 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-shadow">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="register">Register</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="login">Login</router-link>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
+    <header class="navbar bg-light nav-shadow">
+      <section class="navbar-section">
+        <router-link class="btn btn-link" to="register">Register</router-link>
+        <router-link class="btn btn-link" to="login">Login</router-link>
+      </section>
+      <section class="navbar-center">
+        <!-- centered logo or brand -->
+      </section>
+      <section class="navbar-section">
+        <a href="#" class="btn btn-link">Twitter</a>
+        <a href="#" class="btn btn-link">GitHub</a>
+      </section>
+    </header>
     <div class="main-container">
       <router-view></router-view>
     </div>
@@ -43,6 +28,10 @@ export default {
 <style>
 .nav-shadow {
   box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, .16);
+}
+
+.bg-light {
+  background-color: #fff!important;
 }
 </style>
   // background-color: #f1f1f1;
