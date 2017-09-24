@@ -12,7 +12,7 @@
       </li>
     </ul>
     <div class="columns" style="margin-top: 12px;">
-      <div class="column col-4">
+      <div class="column col-3">
         <div class="panel bg-light list-box">
           <div class="panel-header">
             <div class="panel-title">
@@ -67,14 +67,14 @@
         </div>
       </div>
 
-      <div class="column col-8 col-ml-auto">
+      <div class="column col-9 col-ml-auto">
         <div class="panel bg-light nav-shadow">
           <div class="panel-header">
             <div class="panel-title">
               <div class="flexy">
-                <h2>Awesome : Vue</h2>
+                <h2 class="flx-grow">Awesome : Vue</h2>
                 <div class="form-group">
-                  <input class="form-input mx-auto" type="text" id="input-example-1" placeholder="Name">
+                  <input class="form-input" type="text" id="input-example-1" placeholder="Name">
                 </div>
               </div>
             </div>
@@ -84,100 +84,13 @@
             <!-- navigation components: tabs, breadcrumbs or pagination -->
           </div>
           <div class="panel-body">
-            <div class="tile">
-              <div class="tile-icon">
-                <div class="example-tile-icon">
-                  <figure class="avatar avatar-xl" data-initial="TH">
-                  </figure>
-                </div>
-              </div>
-              <div class="tile-content">
-                <h4>Vuetable-2 | Github stars</h4>
-                <p class="tile-subtitle text-gray">Data table simplify</p>
-                <span class="chip">
-                  Crime
-                  <a href="#" class="btn btn-clear" aria-label="Close" role="button"></a>
-                </span>
-                <span class="chip">
-                  <img src="https://picturepan2.github.io/spectre/img/avatar-1.png" class="avatar avatar-sm"> Yan Zhu
-                  <a href="#" class="btn btn-clear" aria-label="Close" role="button"></a>
-                </span>
-              </div>
-              <div class="tile-action">
-                <button class="btn btn-primary">Github</button>
-              </div>
-            </div>
-            <div class="divider text-center" data-content="1"></div>
-            <div class="tile">
-              <div class="tile-icon">
-                <div class="example-tile-icon">
-                  <figure class="avatar avatar-xl" data-initial="WB">
-                  </figure>
-                </div>
-              </div>
-              <div class="tile-content">
-                <p class="tile-title">The Avengers</p>
-                <p class="tile-subtitle text-gray">Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</p>
-              </div>
-              <div class="tile-action">
-                <button class="btn btn-primary">Join</button>
-              </div>
-            </div>
-            <div class="divider text-center" data-content="2"></div>
-            <div class="tile">
-              <div class="tile-icon">
-                <div class="example-tile-icon">
-                  <figure class="avatar avatar-xl" data-initial="DG">
-                  </figure>
-                </div>
-              </div>
-              <div class="tile-content">
-                <p class="tile-title">The Avengers</p>
-                <p class="tile-subtitle text-gray">Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</p>
-              </div>
-              <div class="tile-action">
-                <button class="btn btn-primary">Join</button>
-              </div>
-            </div>
-            <div class="divider"></div>
-            <div class="tile">
-              <div class="tile-icon">
-                <div class="example-tile-icon">
-                  <figure class="avatar avatar-xl" data-initial="AP">
-                  </figure>
-                </div>
-              </div>
-              <div class="tile-content">
-                <p class="tile-title">The Avengers</p>
-                <p class="tile-subtitle text-gray">Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</p>
-              </div>
-              <div class="tile-action">
-                <button class="btn btn-primary">Join</button>
-              </div>
-            </div>
-            <div class="divider"></div>
-            <div class="tile">
-              <div class="tile-icon">
-                <div class="example-tile-icon">
-                  <figure class="avatar avatar-xl" data-initial="TH">
-                  </figure>
-                </div>
-              </div>
-              <div class="tile-content">
-                <p class="tile-title">The Avengers</p>
-                <p class="tile-subtitle text-gray">Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</p>
-              </div>
-              <div class="tile-action">
-                <button class="btn btn-primary">Join</button>
-              </div>
-            </div>
-            <div class="divider"></div>
+            <TestCard/>
+            <TestCard/>
+            <TestCard/>
+            <TestCard/>
+            <TestTile/>
           </div>
           <div class="panel-footer">
-            <Test/>
-            <Test/>
-            <Test/>
-            <Test/>
           </div>
         </div>
       </div>
@@ -187,7 +100,8 @@
 </template>
 
 <script>
-import Test from './TestCard';
+import TestCard from './TestCard';
+import TestTile from './TestTile';
 
 export default {
   name: 'list',
@@ -196,7 +110,7 @@ export default {
       msg: 'Welcome to Your Vue.js PWA',
     };
   },
-  components: { Test },
+  components: { TestCard, TestTile },
 };
 </script>
 
@@ -225,5 +139,9 @@ export default {
 
 .flexy {
   display: flex;
+}
+
+.flx-grow {
+  flex-grow: 1;
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div class="hello">
-    <div class="container">
+    <div class="container-for-card">
   
   <div class="card-media">
     <!-- media container -->
     <div class="card-media-object-container">
-      <div class="card-media-object" style="background-image: url(https://s9.postimg.org/y0sfm95gv/prince_f.jpg);"></div>
+      <div class="card-media-object" style="background-image: url(https://donejs.com/static/img/react-logo.png);"></div>
       <span class="card-media-object-tag subtle">Selling Fast</span>
       <ul class="card-media-object-social-list">
         <li>
@@ -49,7 +49,7 @@
   <div class="card-media">
     <!-- media container -->
     <div class="card-media-object-container">
-      <div class="card-media-object" style="background-image: url(https://s16.postimg.org/x8m99xtgl/tyco_f.jpg);"></div>
+      <div class="card-media-object" style="background-image: url(https://vuejs.org/images/logo.png);"></div>
       <ul class="card-media-object-social-list">
         <li>
           <img src="https://s13.postimg.org/c5aoiq1w7/stock3_f.jpg" class="">
@@ -112,9 +112,13 @@ html {
   box-sizing: inherit;
 }
 
-.container {
+.container-for-card {
   margin: 50px auto 0;
-  width: 700px;
+  width: 800px;
+}
+
+.container-for-card:first-child { 
+  margin: 0 auto 0;
 }
 
 .u-float-right {
@@ -152,7 +156,7 @@ html {
   background: none;
   float: left;
   height: 100%;
-  width: 35%;
+  width: 25%;
   position: relative;
 }
 
@@ -243,7 +247,7 @@ html {
   height: 100%;
   padding: 12px 15px;
   position: relative;
-  width: 65%;
+  width: 75%;
 }
 
 .card-media-body-top {
