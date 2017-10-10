@@ -73,7 +73,7 @@
             <div class="panel-title">
               <div class="flexy">
                 <h2 class="flx-grow">Awesome : Vue</h2>
-                <div class="form-group">
+                <div class="flx-grow form-group">
                   <input class="form-input" type="text" id="input-example-1" placeholder="Name">
                 </div>
               </div>
