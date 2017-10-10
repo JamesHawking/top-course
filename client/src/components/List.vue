@@ -12,8 +12,8 @@
       </li>
     </ul>
     <div class="columns" style="margin-top: 12px;">
-      <div class="column col-3">
-        <div class="panel bg-light list-box">
+      <div class="column col-3 col-mx-auto">
+        <div class="panel bg-light list-box container-shadow">
           <div class="panel-header">
             <div class="panel-title">
               <h2>Awesome : Vue</h2>
@@ -62,33 +62,28 @@
             </div>
           </div>
           <div class="panel-footer">
-            asd
           </div>
         </div>
       </div>
 
-      <div class="column col-9 col-ml-auto">
-        <div class="panel bg-light nav-shadow">
+      <div class="column col-8">
+        <div class="panel list-box bg-light container-shadow">
           <div class="panel-header">
             <div class="panel-title">
               <div class="flexy">
                 <h2 class="flx-grow">Awesome : Vue</h2>
-                <div class="flx-grow form-group">
+                <div class="flx-grow form-group has-icon-right">
                   <input class="form-input" type="text" id="input-example-1" placeholder="Name">
+                  <i class="form-icon icon icon-search"></i>
                 </div>
               </div>
             </div>
           </div>
           <div class="panel-nav">
-
             <!-- navigation components: tabs, breadcrumbs or pagination -->
           </div>
-          <div class="panel-body">
-            <TestCard/>
-            <TestCard/>
-            <TestCard/>
-            <TestCard/>
-            <TestTile/>
+          <div class="panel-body" >
+            <TestTile v-for="item in items" :key="item.id" :description='item.description' />
           </div>
           <div class="panel-footer">
           </div>
@@ -106,8 +101,35 @@ import TestTile from './TestTile';
 export default {
   name: 'list',
   data() {
+    console.log(this);
     return {
       msg: 'Welcome to Your Vue.js PWA',
+      items: {
+        item1: {
+          id: 0,
+          description: 'Vue.js brings together the best features of the javascript framework landscape elegantly. Build complex and maintainable applications faster!',
+        },
+        item2: {
+          id: 1,
+          description: 'Vue.js brings together the best features of the javascript framework landscape elegantly. Build complex and maintainable applications faster!',
+        },
+        item3: {
+          id: 2,
+          description: 'Vue.js brings together the best features of the javascript framework landscape elegantly. Build complex and maintainable applications faster!',
+        },
+        item4: {
+          id: 3,
+          description: 'Vue.js brings together the best features of the javascript framework landscape elegantly. Build complex and maintainable applications faster!',
+        },
+        item5: {
+          id: 4,
+          description: 'Vue.js brings together the best features of the javascript framework landscape elegantly. Build complex and maintainable applications faster!',
+        },
+        item6: {
+          id: 5,
+          description: 'Vue.js brings together the best features of the javascript framework landscape elegantly. Build complex and maintainable applications faster!',
+        },
+      },
     };
   },
   components: { TestCard, TestTile },
@@ -117,9 +139,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .list-box {
-  border: 1px solid #f4f4f4;
   border-radius: 5px;
-  box-shadow: 2px 2px 40px -12px #999;
+  border: 1px none transparent;
+}
+
+.container-shadow {
+  box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 
 .image {
@@ -134,7 +159,7 @@ export default {
 }
 
 .breacrumb-bg {
-  background: #ffffff;
+  background: #f6f9fc;
 }
 
 .flexy {

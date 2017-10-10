@@ -1,5 +1,6 @@
 const AuthController = require('./controllers/AuthController');
 const AuthControllerPolicy = require('./policies/AuthControllerPolicy');
+const ListController = require('./controllers/ListController');
 
 module.exports = (app) => {
   app.post(
@@ -11,4 +12,5 @@ module.exports = (app) => {
     '/login',
     AuthController.login,
   );
+  app.get('/list', ListController.getAll);
 };

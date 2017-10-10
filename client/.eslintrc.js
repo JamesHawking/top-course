@@ -24,6 +24,9 @@ module.exports = {
   },
   // add your custom rules here
   'rules': {
+    "no-unused-vars": "off",
+    "no-named-as-default": "off",
+    "no-param-reassign": "off",
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       'js': 'never',

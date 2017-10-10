@@ -3,16 +3,12 @@ import Router from 'vue-router';
 import List from '@/components/List';
 import Register from '@/components/Register';
 import Login from '@/components/Login';
+import Landing from '@/components/Landing';
 
 Vue.use(Router);
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'list',
-      component: List,
-    },
     {
       path: '/register',
       name: 'register',
@@ -22,6 +18,16 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login,
+    },
+    {
+      path: '/list',
+      name: 'list',
+      component: List,
+    },
+    {
+      path: '/',
+      name: 'landing',
+      component: Landing,
     },
   ],
 });
